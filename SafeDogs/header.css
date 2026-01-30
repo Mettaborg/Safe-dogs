@@ -1,0 +1,158 @@
+/* RESET GLOBAL : S'applique à absolument tous les éléments du site pour un contrôle total des tailles */
+*, *::before, *::after { 
+    box-sizing: border-box; /* Inclut le padding et la bordure dans la largeur/hauteur définie, évitant que les éléments ne débordent */
+}
+
+h1 {
+    display: block;        /* Force l'élément à prendre toute la largeur et à aller à la ligne */
+    text-align: center;    /* Centre le texte horizontalement */
+    width: 100%;           /* S'assure que le titre utilise tout l'espace disponible pour le centrage */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 3rem;       /* Taille fixe (3x la taille de base) */
+    color: #2c2c2c;
+    margin-bottom: 40px;   /* Espace extérieur sous le titre pour l'éloigner de la navigation */
+}
+
+.header-home {
+    display: flex;         /* Active la Flexbox : Aligne le logo et le h1 sur la même ligne */
+    flex-wrap: wrap;       /* Permet aux éléments de passer à la ligne si l'écran devient trop petit (tablette/mobile) */
+    align-items: center;   /* Aligne le logo et le h1 verticalement sur leur axe central */
+    justify-content: center; /* Centre le bloc entier (logo+h1) horizontalement */
+    gap: 2vw;              /* Espace dynamique entre les éléments qui s'ajuste à l'écran */
+    padding: 10px 5%;      /* Evite que le contenu ne touche les bords du bloc qui les contient */
+    width: 100%;           /* Occupe toute la largeur de la page */
+}
+
+.header-home .img-logo { 
+    flex-shrink: 0;        /* IMPORTANT : Interdit au logo de se ratatiner face au texte */
+    width: 35vw;           /* Largeur fluide (35% de la largeur de la fenêtre) */
+    margin: 5px auto 10px; 
+}
+
+.header-home h1 {
+    flex: 1;               /* Autorise le titre à occuper tout l'espace restant à côté du logo */
+    font-size: clamp(24px, 5vw, 60px); /* Taille dynamique : minimum 24px, idéale 5vw, maximum 60px */
+    margin: 0;             /* Supprime la marge de 40px du H1 général pour cet endroit */
+}
+
+.img-logo {
+    display: block;  /* Permet de manipuler l'image comme un bloc */
+    margin: 10px auto; 
+    width: 40vw;  /* Permet de manipuler l'image comme un bloc */
+    max-width: 100%;  /* Sécurité : ne dépasse jamais la largeur de l'écran */
+    min-width: 120px;  /* Sécurité : reste lisible même sur très petit écran */
+    height: auto;  /* Préserve les proportions de l'image (ratio hauteur/largeur) */  
+}
+
+.onglet-nav { 
+    display: flex;  /* Aligne les liens horizontalement */
+    justify-content: center;  /* Fonctionne avec display sur le parent uniqueemnt et centre tous les liens de navigation au milieu du rectangle */
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px 30px;  /* Augmente la zone cliquable pour une meilleure ergonomie */
+    font-weight: 500;     
+    background-color: #636363; 
+    border-radius: 3px;    /* Arrondit les angles du rectangle de fond */
+
+    position: -webkit-sticky;  /* Compatibilité Safari */
+    position: sticky;
+    top: 0;  /*Colle l'élémen tout en haut  */
+    z-index: 1000;  /* S'assure que le menu s'affiche au-dessus de tout le reste (images, texte) */
+    background-color: #636363;
+}
+
+.onglet-nav a {
+    text-decoration: none; /* Supprime le soulignement automatique des liens */
+    color: #ffffff;          
+    padding: 10px 10px;    /* Agrandit la zone cliquable autour du texte */
+    font-weight: 500;      /* Épaisseur du texte (entre normal et gras) */
+    transition: color 0.3s; /* Animation fluide de 0.3s lors du changement de couleur */
+    text-transform: uppercase; /* Force le texte en MAJUSCULES */
+    display: inline-block; /* Permet d'appliquer des marges et du padding correctement */
+}
+
+.onglet-nav a:hover { 
+    color: #252323;        /* Couleur qui s'active au passage de la souris */
+}
+
+.onglet-contact {
+    position: relative;  /* Crée une ancre : le menu déroulant s'attachera à ce bloc précis */
+    display: inline-block;  /* Se comporte comme un lien normal dans la barre de navigation */
+}
+
+.onglet-contact-content {
+    display: none;  /* Masque l'élément au chargement de la page */
+    position: absolute;  /* Sort l'élément du flux normal pour qu'il "flotte" au-dessus du contenu */
+    min-width: 60px;  /*Largeur min. pour les icônes */
+    border-radius: 0 0 5px 5px;  /*Arrondi que le bas */
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);  /* Ajoute une ombre pour donner du relief et décoller le menu du fond */
+    z-index: 10;  /* S'assure que le menu s'affiche au-dessus de tout le reste (images, texte) */
+    left: 50%;  /* Centrage vis à vis du mot "Contact" */
+    transform: translateX(-50%);  /* Recule le menu de la moitié de sa propre largeur pour le centrer parfaitement */
+    background-color: #d9d9d9c4;
+}
+
+.onglet-contact-content a {
+    display: block;  /* Force les icônes à s'empiler verticalement */
+    text-align: center;  /* Centre les icônes horizontalement */
+    font-size: 1.5rem;  /* 1.5x la taille standard */
+    color: #2c2c2c;
+    transition: background-color 0.3s ease;  /* Prépare une animation fluide de 0.3 seconde pour le changement de couleur */
+}
+
+.onglet-contact-content a:hover {
+    color: #636363;
+}
+
+.onglet-contact:hover .onglet-contact-content {
+    display: block;  /* Change l'état de 'none' à 'block' au survol de la souris, fait apparaître le menu instantanément */
+}
+
+
+
+
+
+
+/* Media Queries pour rendre le tout responsive sur petit écran */
+
+@media screen and (max-width: 767px) {   /* Cette règle ne s'active que si la largeur de l'écran est de 767 pixels ou moins (tablettes et mobiles) */ 
+
+    .header-home {
+        flex-direction: column; /* On empile le logo au dessus du titre */
+        text-align: center;
+    } 
+
+    .header-home .img-logo {
+        width: 60vw; /* On agrandit le logo car il est seul sur la ligne */
+    }
+
+    h1 {
+        font-size: 1.8rem; /* Evite que le logo ne s'empile sur 4 lignes */
+    }
+
+    .onglet-nav {
+        flex-direction: column; /* Les onglets s'empilent pour être facilement cliquable avec un pouce */
+        gap: 0;
+        position: static;
+    }
+
+    .onglet-nav a {
+        width: 100%;
+        padding: 15px;  /* Zone de clic plus grande pour les doigts */
+        border-bottom: 1px solid rgba(255,255,255,0.1);  /* Une petite ligne pour séparer les liens */
+    }
+
+    .onglet-contact-content {
+        position: static;  /* On retire le "flottement" présent sur odi */
+        display: block;  /* Affichage permanent pour éviter le survol compliqué avec le doigt */
+        width: 100%;  /* Prend toute la largeur dispo */
+        transform: none;  /*Annulation du centrage présent sur pc */
+        box-shadow: none;  /* Retire l'ombre pour un look plus sobre */
+    }
+
+    .onglet-contact-content a {
+        padding: 20px 0;  /* Augmente la zonne de clic */
+        font-size: 2rem;  /* Agrandit les icônes pour plus de lisibilité et facilité */
+        border-bottom: 1px solid #6e5f56;  /* Petit trait pour séparer les icônes */
+    }
+}
