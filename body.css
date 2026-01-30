@@ -177,7 +177,7 @@ footer a {
         height: auto;
     }
     .img-dressage {  
-        order: -1;  /* Place cette image précise tout en haut de la liste, avant les autres */
+        display: none;  
     }
 
     .img-chien-6 {
@@ -185,7 +185,7 @@ footer a {
     }
 
     .img-grande {
-        order: 2;
+        order: -1;  /* Place l'image en première malgré l'ordre pré-établi */
     }
 
     .img-chien-7 {
