@@ -181,7 +181,7 @@ footer a {
     }
 
     .img-chien-6 {
-        order: 1;
+        display: none;
     }
 
     .img-grande {
@@ -189,7 +189,7 @@ footer a {
     }
 
     .img-chien-7 {
-        order: 3;
+        display: none;
     }
 
     .localisation {
@@ -204,3 +204,4 @@ footer a {
         padding: 20px 0;
     }
 }
+
