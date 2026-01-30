@@ -1,0 +1,206 @@
+body {
+    background-color: #d9d9d9c4;
+}
+
+h2 {
+    text-decoration: underline;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #2c2c2c; 
+}
+
+h3::before {   /* Pseudo-élément pour ajouter une icône AVANT chaque titre h3  */
+    content: "🐾 ";  /* Insère l'émoji pattes de chiens */
+    margin-right: 10px;  /* Crée un espace de 10px entre l'émoji et le début du texte */
+    color: #2c2c2c;
+}
+
+h3::after {   /* Pseudo-élément pour ajouter une icône AVANT chaque titre h3  */
+    content: "🐾 ";  /* Insère l'émoji pattes de chiens */
+    margin-right: 10px;  /* Crée un espace de 10px entre l'émoji et le début du texte */
+    color: #2c2c2c;
+}
+
+.Politique-de-confidentialite h3 {
+    text-align: center;
+}
+
+
+p {
+    text-align: justify;
+}
+
+hr {
+    border: 1px solid;  /* Gère l'épaisseur de la ligne */
+    border-radius: 3px; /* Arrondit les extrémités de la ligne */
+}
+
+.article-presentation h3 {
+    text-align: justify;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #2c2c2c;
+}
+
+.Photos-accueil {
+    display: grid;  /* Permet de fractionner l'élément en plusieur cases */
+    grid-template-columns: 1fr 1fr 1fr; /* Définis le nombre de colone et leur importance (3 ligne = 3 cases /3x1 = diviser en 3 cases égales */
+    grid-template-rows: 250px 250px 250px;    /* Définit 2 lignes horizontales fixes de 250px de hauteur */
+    gap: 10px;  /* Crée un espacement entre chaque image de la grille */
+}
+
+
+.img-grande {
+    grid-column: 2;   /* Place l'image spécifiquement dans la deuxième colonne */
+    grid-row: 1 / 4;  /* Fait s'étendre l'image de la ligne 1 jusqu'à la ligne 3 (prend toute la hauteur) */
+    width: 100%;    /* Force l'image à prendre toute la largeur de sa cellule */
+    height: 100%;      /* Force l'image à prendre toute la hauteur de sa cellule */
+    object-fit: cover;  /* Redimensionne l'image pour remplir le cadre sans la déformer*/
+}
+
+.img-chien-6 {
+    grid-column: 1;
+    grid-row: 1 / 4;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.img-chien-7 {
+    grid-column: 3;
+    grid-row: 1 / 4;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.img-onglet-tarifs {
+    display:grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    gap: 10px;
+}
+
+.img-dressage {
+    grid-column: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.img-Tarifs {
+    grid-column: 2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.img-croquette {
+    grid-column: 3;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.img-friandise {
+    display: block;  /* Transforme l'image en bloc pour pouvoir la centrer */
+    margin: 10px auto;  /* Centre l'image horizontalement avec des marges automatiques */
+    width: 100%;
+    height:200px;  /* Hauteur fixe pour cette bannière */
+    object-fit: cover;  /* Évite la déformation visuelle */
+}
+
+.localisation {
+    display: block;   
+    margin: 20px auto;
+    width: 100%;
+    max-width: 600px;
+    height: 200px;
+    object-fit:cover
+}
+
+.carte-saverne h3 {
+        margin: 20 0 10px;  /* Supprime la marge haute et crée un espace de 20px sous le titre */
+        text-align: center;
+}
+
+.carte-saverne h3::before {
+    content: "\f1b9";  /* Code Unicode Font Awesome pour l'icône de voiture */
+    font-family: "font awesome 6 free";  /* Indispensable pour que le navigateur sache dans quelle police chercher le code */
+    font-weight: 900;  /* Code Unicode Font Awesome pour l'icône de voiture */
+    margin-right: 10px;
+    color: #434242;
+}
+
+.carte-saverne h3::after {
+    content: "\f1b9";  /* Code Unicode Font Awesome pour l'icône de voiture */
+    font-family: "font awesome 6 free";  /* Indispensable pour que le navigateur sache dans quelle police chercher le code */
+    font-weight: 900;  /* Code Unicode Font Awesome pour l'icône de voiture */
+    margin-right: 10px;
+    margin-left: 10px;
+    color: #434242;
+}
+
+footer {
+    display: flex;  /* Active Flexbox pour aligner les éléments du footer */
+    justify-content: center;  /* Centre horizontalement le contenu du footer */
+    align-items: center;  /* Centre verticalement le contenu du footer */
+    gap: 20px;
+}
+
+footer a {
+    text-decoration: none;  /* Supprime le soulignement par défaut des liens */
+    text-transform: uppercase;  /* Met automatiquement tout le texte en majuscules */
+    color: #503e31;
+    padding: 5px 5px;  /* Zone de clic agrandie de 5px autour du texte */
+    font-size: 10px;
+}
+
+
+
+
+
+
+
+/* Media Queries pour rendre le tout responsive sur petit écran */
+
+@media screen and (max-width: 767px) {   /* Cette règle ne s'active que si la largeur de l'écran est de 767 pixels ou moins (tablettes et mobiles) */ 
+
+    .Photos-accueil, .img-onglet-tarifs {
+        grid-template-columns: 1fr !important;  /* Force l'affichage sur une seule colonne au lieu de trois */
+        grid-template-rows: auto !important;  /* Laisse les lignes s'adapter automatiquement à la hauteur des images */
+    }
+    .img-grande, .img-chien-6, .img-chien-7, .img-dressage, .img-Tarifs, .img-croquette {
+        grid-column: auto !important;  /* !important force l'annulation des positions (colonne 1, 2 ou 3) définies pour les ordinateurs */
+        grid-row: auto !important;
+        width: 100%;
+        height: auto;
+    }
+    .img-dressage {  
+        order: -1;  /* Place cette image précise tout en haut de la liste, avant les autres */
+    }
+
+    .img-chien-6 {
+        order: 1;
+    }
+
+    .img-grande {
+        order: 2;
+    }
+
+    .img-chien-7 {
+        order: 3;
+    }
+
+    .localisation {
+        width: 100%;
+        aspect-ratio: 16 / 9;  /* La hauteur s'ajustera toute seule proportionnellement à la largeur */
+        height: auto;  /* On annule la hauteur fixe */
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px 0;
+    }
+}
