@@ -134,9 +134,7 @@ td {
 }
 
 td li {
-    border-bottom: 0.5px solid #b8b7b7; /* Ajoute une ligne de séparation entre les éléments de la liste */
-    padding-bottom: 10px; /* Ajoute un espace de 10px sous chaque élément de la liste */
-    margin-bottom: 10px; /* Ajoute un espace de 10px entre les éléments de la liste */
+    text-align: center;
     list-style-type: none; /* Supprime les puces par défaut des listes */;
 }
 
@@ -262,3 +260,4 @@ footer a {
         padding: 20px 0;
     }
 }
+
