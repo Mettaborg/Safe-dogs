@@ -53,8 +53,7 @@ h1 {
     font-weight: 500;     
     background-color: #636363; 
     border-radius: 3px;    /* Arrondit les angles du rectangle de fond */
-    text-align: center;
-    font-size: 1.5rem; 
+    font-size: 1rem; 
     position: sticky;  /* Compatibilité Safari */
     top: 0;  /*Colle l'élémen tout en haut  */
     z-index: 1000;  /* S'assure que le menu s'affiche au-dessus de tout le reste (images, texte) */
@@ -133,6 +132,8 @@ h1 {
         flex-direction: column; /* Les onglets s'empilent pour être facilement cliquable avec un pouce */
         gap: 0;
         position: static;
+        font-size: 1.5rem;
+        text-align: center;
     }
 
     .onglet-nav a {

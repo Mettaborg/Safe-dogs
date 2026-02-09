@@ -22,13 +22,19 @@ h3::after {   /* Pseudo-élément pour ajouter une icône AVANT chaque titre h3 
     color: #2c2c2c;
 }
 
-.Politique-de-confidentialite h3 {
+.Politique-de-confidentialite h3,
+.a-propos h3 {
     text-align: center;
 }
 
+.Politique-de-confidentialite li {
+    margin-left: 5px;
+    list-style-type: none;;
+}
 
 p {
     text-align: justify;
+    margin-left: 5px;;
 }
 
 hr {
@@ -140,6 +146,10 @@ td li {
 td li:last-child {
     border-bottom: none;
     margin-bottom: 0;
+}
+
+tfoot p {
+    font-size: 0.7rem;
 }
 
 ul {
