@@ -255,17 +255,38 @@ footer a {
 }
 
 /* ==========================================================================
-   4. VERSION MOBILE (ÉCRANS INFERIEURS A 767px)
+4. VERSION MOBILE (ÉCRANS INFERIEURS A 767px)
    ========================================================================== */
 @media screen and (max-width: 767px) {   
     
-    /* On masque les images latérales pour ne pas étouffer le smartphone */
-    .img-dressage,
-    .img-croquette {
-        display: none;
+    /* 1. On annule complètement la grille sur mobile */
+    .Photos-accueil {
+        display: block !important;
+        padding: 10px !important;
+        grid-template-columns: none !important;
+        grid-template-rows: none !important;
     }
 
-    /* Le bloc central prend toute la largeur du téléphone */
+    /* 2. On masque les images inutiles */
+    .img-dressage, 
+    .img-croquette, 
+    .img-chien-6, 
+    .img-chien-7 {
+        display: none !important;
+    }
+
+    /* 3. On force l'image restante à oublier qu'elle était dans une grille */
+    .img-grande {
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        grid-column: auto !important; /* Annule la position dans la grille */
+        grid-row: auto !important;    /* Annule la position dans la grille */
+        object-fit: cover !important;
+        margin: 0 auto !important;
+    }
+
+    /* ... reste du code (tarifs, footer, etc.) ... */
     .section-tarifs-flex {
         flex-direction: column;
         padding: 20px 10px;
