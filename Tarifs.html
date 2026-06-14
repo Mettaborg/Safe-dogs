@@ -15,6 +15,7 @@
 
 <body>
     <header>
+        <div class="header-home">
 
         <img src="img/Logo.JPEG" class="img-logo" alt="Logo du site"> 
         <h1> Safe Dogs | Pension Canine </h1>
@@ -46,55 +47,59 @@
             </div>
         </nav>
     
-    <main role="main">
-   
-        <section class="img-onglet-tarifs">
-            <img src="img/dressage.jpg" class="img-dressage">
-        <div class="table-container">
-            <table>
-                <thead> <!--Contient les en-têtes-->
-                    <tr><!--Ligne horizontale des en-têtes-->
-                        <th scope="col">TARIF JOURNALIER* <br> <span> X€ </span><!--Permet de cibler le prix en CSS--></th><!--Cellule d'en-tête-->
-                        <th scope="col">TARFIS HEBDO* <br> <span> X€ </span></th>
-                    </tr>
-                </thead>
-                <tbody> <!--Contient le corps du tableau-->
-                    <tr>
-                        <td><!--Cellule de données-->
-                            <ul>
-                                <li>Une à deux balades</li>
-                                <li>Jeux de réflexion</li>
-                                <li>Produits de mastication</li>
-                                <li>Programme sur mesure</li>
-                            </ul>
-                        </td>
-                        <td>
-                            <ul>
-                                <li>Une à deux balades journalières</li>
-                                <li>Jeux de réflexion</li>
-                                <li>Produits de mastication</li>
-                                <li>Cani-cross / VTT / Rando / Agility</li>
-                                <li>Programme sur mesure</li>
-                            </ul>
-                        </td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td colspan="2"> <p>*Les acitivités sont à titre indicatif et sont soumises à changement en fonction des conditions météorologiques et des divers imprévus potentiels.</p></td>
-                    </tfoot>
-            </table>
-        </div> 
-            <img src="img/croquette.jpg" class="img-croquette">
+<main role="main">
+    <section class="section-tarifs-flex">
+        
+        <img src="img/dressage.jpg" class="img-dressage" alt="Chien en dressage">
 
-        </section>
-    </main>
+        <div class="conteneur-central-tarifs">
+            
+            <div class="carte-tarif">
+                <h3 class="titre-formule">GARDERIE*</h3>
+                <div class="prix-box">
+                    <span class="prix">15€</span>
+                    <span class="duree">/ jour</span>
+                </div>
+                <ul class="liste-services">
+                    <li>Balades</li>
+                    <li>Jeux de réflexion</li>
+                    <li>Produits de mastication</li>
+                    <li>Sociabilisation</li>
+                </ul>
+            </div>
+
+            <div class="carte-tarif">
+                <h3 class="titre-formule">PENSION CLASSIQUE*</h3>
+                <div class="prix-box">
+                    <span class="prix">25€</span>
+                    <span class="duree">/ jour</span>
+                </div>
+                <ul class="liste-services">
+                    <li>Balades journalières</li>
+                    <li>Jeux de réflexion</li>
+                    <li>Renforcement éducatif</li>
+                    <li>Produits de mastication</li>
+                    <li>Sociabilisation</li>
+                    <li>Sport : Trail / Running / Rando</li>
+                    <li>Programme sur mesure</li>
+                </ul>
+            </div>
+
+            <p class="mention-tarifs">
+                *Les activités sont à titre indicatif et sont soumises à la durée du séjour, aux conditions météorologiques et aux divers imprévus potentiels.
+            </p>
+        </div> 
+
+        <img src="img/croquette.jpg" class="img-croquette" alt="Gamelle de croquettes">
+
+    </section>
+</main>
 
     <footer>
         <nav>
             <a href="Mentionslégales.html" aria-label="Mentions Légales">Mentions Légales </a>
             <a href="politique de confidentialite.html" aria-label="Politique de Confidentialité">Politique de Confidentialité</a>
-            <a href="a-propos.html" aria-label="A propos">À Propos</a>
+            <a href="CGV.html" aria-label="A propos">CGV</a>
         </nav>
     </footer>
 

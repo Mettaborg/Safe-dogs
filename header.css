@@ -9,7 +9,7 @@ h1 {
     width: 100%;           /* S'assure que le titre utilise tout l'espace disponible pour le centrage */
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 3rem;       /* Taille fixe (3x la taille de base) */
-    color: #2c2c2c;
+    color: #ffffff;
     margin-bottom: 40px;   /* Espace extérieur sous le titre pour l'éloigner de la navigation */
 }
 
@@ -38,7 +38,7 @@ h1 {
 .img-logo {
     display: block;  /* Permet de manipuler l'image comme un bloc */
     margin: 10px auto; 
-    width: 40vw;  /* Permet de manipuler l'image comme un bloc */
+    width: 30vw;  /* Permet de manipuler l'image comme un bloc */
     max-width: 100%;  /* Sécurité : ne dépasse jamais la largeur de l'écran */
     min-width: 120px;  /* Sécurité : reste lisible même sur très petit écran */
     height: auto;  /* Préserve les proportions de l'image (ratio hauteur/largeur) */  
@@ -48,10 +48,10 @@ h1 {
     display: flex;  /* Aligne les liens horizontalement */
     justify-content: center;  /* Fonctionne avec display sur le parent uniqueemnt et centre tous les liens de navigation au milieu horizontal du rectangle */
     width: 100%;
-    margin: 10px 0;
+    margin: 10px auto;
     padding: 20px 40px;  /* Augmente la zone cliquable pour une meilleure ergonomie */
     font-weight: 500;     
-    background-color: #636363; 
+    background-color: #1f1f1f; 
     border-radius: 3px;    /* Arrondit les angles du rectangle de fond */
     font-size: 1rem; 
     position: sticky;  /* Compatibilité Safari */
@@ -63,7 +63,7 @@ h1 {
     text-decoration: none; /* Supprime le soulignement automatique des liens */
     color: #ffffff;          
     padding: 10px 10px;    /* Agrandit la zone cliquable autour du texte */
-    font-weight: 500;      /* Épaisseur du texte (entre normal et gras) */
+    font-weight: 800;      /* Épaisseur du texte (entre normal et gras) */
     transition: color 0.3s; /* Animation fluide de 0.3s lors du changement de couleur */
     text-transform: uppercase; /* Force le texte en MAJUSCULES */
     display: inline-block; /* Permet d'appliquer des marges et du padding correctement */

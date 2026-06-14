@@ -1,270 +1,288 @@
-/* Typographie et éléments décoratifs */
+/* ==========================================================================
+   1. DESIGN GLOBAL ET TYPOGRAPHIE
+   ========================================================================== */
 body {
-    background-color: #d9d9d9c4;
+    background-color: #000000;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
 }
 
 h2 {
     text-decoration: underline;
     text-align: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    color: #2c2c2c; 
+    color: #ebeaea; 
 }
 
-h3::before {   /* Pseudo-élément pour ajouter une icône AVANT chaque titre h3  */
-    content: "🐾 ";  /* Insère l'émoji pattes de chiens */
-    margin-right: 10px;  /* Crée un espace de 10px entre l'émoji et le début du texte */
-    color: #2c2c2c;
+/* Patounes autour des titres h3 */
+h3::before {   
+    content: "🐾 ";  
+    margin-right: 10px;  
+    color: #838181;
 }
 
-h3::after {   /* Pseudo-élément pour ajouter une icône AVANT chaque titre h3  */
-    content: "🐾 ";  /* Insère l'émoji pattes de chiens */
-    margin-right: 10px;  /* Crée un espace de 10px entre l'émoji et le début du texte */
-    color: #2c2c2c;
+h3::after {   
+    content: "🐾 ";  
+    margin-left: 10px;  
+    color: #a8a7a7;
 }
 
-.Politique-de-confidentialite h3,
-.a-propos h3 {
-    text-align: center;
+h4.garderie::before {
+    content: "☀️ ";
 }
 
-.Politique-de-confidentialite li {
-    margin-left: 5px;
-    list-style-type: none;;
+h4.pension::before {
+    content: "🌙 ";
+}
+
+h4 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:#a8a7a7; 
+    margin-LEFT: 30px;
 }
 
 p {
     text-align: justify;
-    margin-left: 5px;;
+    margin-left: 30px;
+    margin-right: 30px;
+    color: #a8a7a7;
+    line-height: 1.6;
+}
+
+li {
+    color: #a8a7a7;
+    line-height: 1.6;
 }
 
 hr {
-    border: 1px solid;  /* Gère l'épaisseur de la ligne */
-    border-radius: 3px; /* Arrondit les extrémités de la ligne */
+    border: 1px solid;  
+    border-radius: 3px; 
 }
 
+.Politique-de-confidentialite h3,
+.a-propos h3,
 .article-presentation h3 {
-    text-align: justify;
+    text-align: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    color: #2c2c2c;
+    color: #ebeaea;
 }
 
-/* Photos img */
+.Politique-de-confidentialite li {
+    margin-left: 5px;
+    list-style-type: none;
+}
+
 .Photos-accueil {
-    display: grid;  /* Permet de fractionner l'élément en plusieur cases */
-    grid-template-columns: 1fr 1fr 1fr; /* Définis le nombre de colone et leur importance (3 ligne = 3 cases /3x1 = diviser en 3 cases égales */
-    grid-template-rows: 250px 250px 250px;    /* Définit 2 lignes horizontales fixes de 250px de hauteur */
-    gap: 10px;  /* Crée un espacement entre chaque image de la grille */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* 3 colonnes égales */
+    grid-template-rows: 250px 250px 250px; /* On remet les 3 lignes fixes de 250px */
+    gap: 10px;
+    padding: 20px;
 }
 
-
-.img-grande {
-    grid-column: 2;   /* Place l'image spécifiquement dans la deuxième colonne */
-    grid-row: 1 / 4;  /* Fait s'étendre l'image de la ligne 1 jusqu'à la ligne 3 (prend toute la hauteur) */
-    width: 100%;    /* Force l'image à prendre toute la largeur de sa cellule */
-    height: 100%;      /* Force l'image à prendre toute la hauteur de sa cellule */
-    object-fit: cover;  /* Redimensionne l'image pour remplir le cadre sans la déformer*/
-}
-
-.img-chien-6 {
-    grid-column: 1;
-    grid-row: 1 / 4;
+/* On force les images de l'accueil à occuper 100% de leur case sans déborder */
+.Photos-accueil img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+/* Placement exact de vos 3 images dans la grille */
+.img-chien-6 {
+    grid-column: 1;
+    grid-row: 1 / 4; /* Prend toute la hauteur à gauche */
+}
+
+.img-grande {
+    grid-column: 2;
+    grid-row: 1 / 4; /* Prend toute la hauteur au milieu */
 }
 
 .img-chien-7 {
     grid-column: 3;
-    grid-row: 1 / 4;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    grid-row: 1 / 4; /* Prend toute la hauteur à droite */
 }
 
-
-.img-onglet-tarifs {
-    display:grid;
-    grid-template-columns: 1fr 3fr 1fr;
-    gap: 10px;
+/* ==========================================================================
+   2. NOUVELLE ZONE TARIFS (FLEXBOX NETTOYÉ)
+   ========================================================================== */
+.section-tarifs-flex {
+    display: flex;
+    justify-content: center; 
+    align-items: stretch;     /* Aligne parfaitement les images et le bloc central au milieu */
+    gap: 40px;               /* Espace parfait entre les images et les cartes */
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.img-dressage {
-    grid-column: 1;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
+/* Vos deux images latérales sagement proportionnées */
+.img-dressage,
 .img-croquette {
-    grid-column: 3;
+    width: 350px;
+    object-fit: cover;       /* Recadre sans aucune déformation */
+    border-radius: 12px;
+}
+
+/* Le bloc du milieu qui contient vos deux cartes */
+.conteneur-central-tarifs {
+    display: flex;
+    flex-direction: column;  /* Empile Carte 1, Carte 2, puis le texte */
+    gap: 20px;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    max-width: 380px;        /* Largeur idéale pour les cartes */
 }
 
-.img-friandise {
-    display: block;  /* Transforme l'image en bloc pour pouvoir la centrer */
-    margin: 10px auto;  /* Centre l'image horizontalement avec des marges automatiques */
-    width: 100%;
-    height:200px;  /* Hauteur fixe pour cette bannière */
-    object-fit: cover;  /* Évite la déformation visuelle */
-}
-
-
-/* Table-container */
-table {
-  width: 100%; /* Le tableau prend toute la largeur disponible de son conteneur parent */
-  border-collapse: collapse; /* Fusionne les bordures adjacentes pour éviter e double traits de séparation */
-  background-color: #b8b7b7; /* Le fond du tableau */
-  color: rgb(56, 55, 55); /* Couleur du texte dans le tableau */
-  font-family: Georgia, 'Times New Roman', Times, serif, sans-serif;
-  font-size: 1.2rem; /* Taille de police légèrement plus grande pour une meilleure lisibilité */
-}
-
-th {
-  background-color: #636363; /* Couleur pour les entêtes */
-  color: #d5d2d2; /* Couleur du texte dans les entêtes */
-  border: 0.5px solid black; /* Bordure plus fine pour les entêtes */
-  padding: 20px;
-}
-
-th span {
-  font-size: 1.5rem; /* Agrandit la taille du texte dans les entêtes */
-  display: block; /* Permet de faire passer le texte à la ligne et d'appliquer les marges */
-}
-
-td {
-  vertical-align: top; /* Aligne le texte en haut des cases */
-  border: 1px solid #555; /* Séparation discrète entre les deux colonnes */
-}
-
-td li {
-    list-style-type: none; /* Supprime les puces par défaut des listes */
+/* Style de vos cartes de tarifs grisées */
+.carte-tarif {
+    background-color: #d6d6d6;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 25px;
     text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
 }
 
-td li:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
+.carte-tarif:hover {
+    transform: translateY(-5px);
 }
 
-tfoot p {
-    font-size: 0.7rem;
+.titre-formule {
+    font-size: 18px;
+    color: #333333;
+    margin-bottom: 15px;
+    font-weight: bold;
 }
 
-ul {
-  padding-left: 5px;
+.prix-box {
+    margin-bottom: 20px;
 }
 
-li {
-  margin-bottom: 15px;
-  line-height: 1.4; /* Améliore la lisibilité en augmentant l'espacement entre les lignes */
+.prix {
+    font-size: 38px;
+    font-weight: bold;
+    color: #2d3436;
 }
 
-/* Footer et bas de page */
+.duree {
+    font-size: 14px;
+    color: #555555;
+}
+
+.liste-services {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.liste-services li {
+    font-size: 15px;
+    color: #333333;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.liste-services li::before {
+    content: "•";
+    color: #000000; 
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.mention-tarifs {
+    text-align: center;
+    font-size: 13px;
+    color: #777777;
+    font-style: italic;
+    margin: 10px 0 0 0;
+    line-height: 1.4;
+}
+
+/* ==========================================================================
+   3. AUTRES ÉLÉMENTS ET FOOTER
+   ========================================================================== */
+.img-friandise,
 .carte-saverne {
-    display: block;   
-    margin: 20px auto;
+    display: block;  
+    margin: 20px auto;  
     width: 100%;
-    max-width: 600px;
-    height: 200px;
-    object-fit:cover
+    height: 200px;  
+    object-fit: cover;  
 }
 
 .localisation h3 {
-        margin: 20 0 10px;  /* Supprime la marge haute et crée un espace de 20px sous le titre */
-        text-align: center;
+    margin: 20px 0 10px;  
+    text-align: center;
+    color: #ebeaea;
 }
 
 .localisation h3::before {
-    content: "\f1b9";  /* Code Unicode Font Awesome pour l'icône de voiture */
-    font-family: "font awesome 6 free";  /* Indispensable pour que le navigateur sache dans quelle police chercher le code */
-    font-weight: 900;  /* Code Unicode Font Awesome pour l'icône de voiture */
+    font-family: "font awesome 6 free";  
+    font-weight: 900;  
     margin-right: 10px;
-    color: #434242;
+    color: #ebeaea;
 }
 
 .localisation h3::after {
-    content: "\f1b9";  /* Code Unicode Font Awesome pour l'icône de voiture */
-    font-family: "font awesome 6 free";  /* Indispensable pour que le navigateur sache dans quelle police chercher le code */
-    font-weight: 900;  /* Code Unicode Font Awesome pour l'icône de voiture */
+    font-family: "font awesome 6 free";  
+    font-weight: 900;  
     margin-right: 10px;
     margin-left: 10px;
     color: #434242;
 }
 
 footer {
-    display: flex;  /* Active Flexbox pour aligner les éléments du footer */
-    justify-content: center;  /* Centre horizontalement le contenu du footer */
-    align-items: center;  /* Centre verticalement le contenu du footer */
+    display: flex;  
+    justify-content: center;  
+    align-items: center;  
     gap: 20px;
+    padding: 20px 0;
 }
 
 footer a {
-    text-decoration: none;  /* Supprime le soulignement par défaut des liens */
-    text-transform: uppercase;  /* Met automatiquement tout le texte en majuscules */
-    color: #503e31;
-    padding: 5px 5px;  /* Zone de clic agrandie de 5px autour du texte */
+    text-decoration: none;  
+    text-transform: uppercase;  
+    color: #ebeaea;
+    padding: 5px;  
     font-size: 10px;
 }
 
-
-
-
-
-
-
-/* Media Queries pour rendre le tout responsive sur petit écran */
-
-@media screen and (max-width: 767px) {   /* Cette règle ne s'active que si la largeur de l'écran est de 767 pixels ou moins (tablettes et mobiles) */ 
+/* ==========================================================================
+   4. VERSION MOBILE (ÉCRANS INFERIEURS A 767px)
+   ========================================================================== */
+@media screen and (max-width: 767px) {   
     
-    /* Photos / img */
-    .Photos-accueil, .img-onglet-tarifs {
-        grid-template-columns: 1fr !important;  /* Force l'affichage sur une seule colonne au lieu de trois */
-        grid-template-rows: auto !important;  /* Laisse les lignes s'adapter automatiquement à la hauteur des images */
-    }
-    .img-grande, .img-chien-6, .img-chien-7, .img-dressage, .img-Tarifs, .img-croquette {
-        grid-column: auto !important;  /* !important force l'annulation des positions (colonne 1, 2 ou 3) définies pour les ordinateurs */
-        grid-row: auto !important;
-        width: 100%;
-        height: auto;
-    }
-    .img-dressage {  
-        display: none ;  
-    }
-
+    /* On masque les images latérales pour ne pas étouffer le smartphone */
+    .img-dressage,
     .img-croquette {
-        display: none;;
+        display: none;
     }
 
-    .img-chien-6 {
-        display: none;  /*Cache la photosur petit écran */
+    /* Le bloc central prend toute la largeur du téléphone */
+    .section-tarifs-flex {
+        flex-direction: column;
+        padding: 20px 10px;
     }
 
-    .img-grande {
-        order: 2;
+    .conteneur-central-tarifs {
+        max-width: 100%;
     }
 
-    .img-chien-7 {
-        display: none;;
-    }
-
-    /* Table-container */
-    table {
-        table-layout: fixed;  /* Permet de forcer les cellules à s'adapter à la largeur du tableau */
-        width: 100%;  /* Assure que chaque élément prend toute la largeur disponible */
-    }
-
-    /* Footer et bas de page */
     .localisation {
         width: 100%;
-        aspect-ratio: 16 / 9;  /* La hauteur s'ajustera toute seule proportionnellement à la largeur */
-        height: auto;  /* On annule la hauteur fixe */
+        aspect-ratio: 16 / 9;  
+        height: auto;  
     }
 
     footer {
         flex-direction: column;
         gap: 15px;
-        padding: 20px 0;
     }
 }
