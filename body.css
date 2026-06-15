@@ -51,7 +51,7 @@ p {
     line-height: 1.6;
 }  
 
-.Neve-et-Ubac {
+.Pensionnaires-1, .Pensionnaires-2, .Pensionnaires-3, .Pensionnaires-4, .Pensionnaires-5, .Pensionnaires-6, .Pensionnaires-7, .Pensionnaires-8 {
     display: flex; /* Active la disposition en ligne */
     align-items: center; /* Aligne verticalement l'image et le texte au milieu */
     background-color: #1a1a1a; /* Un gris très sombre pour contraster avec le fond noir */
@@ -61,7 +61,7 @@ p {
     margin: 40px 30px; /* Espace autour du bloc */
 }
 
-img.neve-babac {
+img.neve-babac, img.tao, img.toto {
     display: block;
     width: 100%;       /* Prend toute la largeur disponible */
     max-width: 400px;  /* Limite la largeur pour ne pas qu'elle soit trop immense sur PC */
@@ -307,30 +307,15 @@ footer a {
 
     /* ... reste du code (tarifs, footer, etc.) ... */
 
-    .Neve-et-Ubac {
-        flex-direction: column; /* Force l'empilement (image EN DESSUS du texte) */
-        gap: 15px; /* Réduit l'espace sur mobile */
-        padding: 20px;
-        margin: 20px 10px; /* Moins de marge pour s'adapter à la largeur */
-    }
-
-    /* La photo repasse en 100% de largeur sur mobile */
-    .neve-babac {
-        width: 100% !important; /* Force la largeur à 100% */
-        margin: 0 0 10px 0; /* Ajoute un peu d'espace sous l'image */
-    }
-
-    /* Le texte repasse aussi en 100% */
-    .description-chiens {
-        width: 100% !important;
-    }
-
-    /* On annule les marges des 'p' globales pour le mobile ici */
-    .description-chiens p {
-        margin-left: 0;
-        margin-right: 0;
-        text-align: left; /* Parfois plus lisible sur mobile */
-    }
+    .Pensionnaires {
+    display: flex; /* Active la disposition en ligne */
+    align-items: center; /* Aligne verticalement l'image et le texte au milieu */
+    background-color: #1a1a1a; /* Un gris très sombre pour contraster avec le fond noir */
+    border: 1px solid #333;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 40px 30px; /* Espace autour du bloc */
+}
 
     .section-tarifs-flex {
         flex-direction: column;
