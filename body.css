@@ -311,15 +311,30 @@ footer a {
 
     /* ... reste du code (tarifs, footer, etc.) ... */
 
-    .Pensionnaires, .Pensionnaires-2, .Pensionnaires-3  {
-    display: flex; /* Active la disposition en ligne */
-    align-items: center; /* Aligne verticalement l'image et le texte au milieu */
-    background-color: #1a1a1a; /* Un gris très sombre pour contraster avec le fond noir */
-    border: 1px solid #333;
-    border-radius: 15px;
-    padding: 20px;
-    margin: 40px 30px; /* Espace autour du bloc */
-}
+    .Pensionnaires-1, .Pensionnaires-2, .Pensionnaires-3  {
+    flex-direction: column; /* Force l'empilement (image EN DESSUS du texte) */
+        gap: 15px; /* Réduit l'espace sur mobile */
+        padding: 20px;
+        margin: 20px 10px; /* Moins de marge pour s'adapter à la largeur */
+    }
+
+    /* La photo repasse en 100% de largeur sur mobile */
+    .neve-babac, .tao, .toto {
+        width: 100% !important; /* Force la largeur à 100% */
+        margin: 0 0 10px 0; /* Ajoute un peu d'espace sous l'image */
+    }
+
+    /* Le texte repasse aussi en 100% */
+    .description-chiens {
+        width: 100% !important;
+    }
+
+    /* On annule les marges des 'p' globales pour le mobile ici */
+    .description-chiens p {
+        margin-left: 0;
+        margin-right: 0;
+        text-align: left; /* Parfois plus lisible sur mobile */
+    }
 
     .section-tarifs-flex {
         flex-direction: column;
