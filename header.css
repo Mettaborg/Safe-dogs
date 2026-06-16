@@ -44,6 +44,15 @@ h1 {
     height: auto;  /* Préserve les proportions de l'image (ratio hauteur/largeur) */  
 }
 
+.coordonnees {
+    text-align: center;  /* Centre le texte horizontalement */
+    font-style: italic;  /* Met le texte en italique pour le différencier du reste */
+    font-weight: bold;   /* Met le texte en gras */
+    font-size: 1rem;     /* Taille de police standard */
+    color: #d9d9d9c4;      /* Couleur blanche pour contraster avec le fond sombre */
+    margin-top: 10px;    /* Espace au-dessus du texte pour l'éloigner du titre */
+    margin-bottom: 2px;
+}
 .onglet-nav { 
     display: flex;  /* Aligne les liens horizontalement */
     justify-content: center;  /* Fonctionne avec display sur le parent uniqueemnt et centre tous les liens de navigation au milieu horizontal du rectangle */
